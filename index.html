@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Orçamento Pessoal</title>
+  <meta charset="utf-8">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <script src="app.js"></script>
+
+</head>
+
+<body>
+  <header id="topo">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark mb-5">
+      <div class="container">
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand">
+          <img src="logo.png" width="50" height="35" alt="Orçamento pessoal">
+        </a>
+        <!-- Menu Hamburguer -->
+        <button type="button " class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navegação -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="consulta.html">Consulta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="principal">
+    <div class="container">
+      <div class="row">
+        <div class="col mb-5">
+          <h1 class="display-4">Registro de nova despesa</h1>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-2">
+          <select class="form-control" id="ano">
+            <option value="">Ano</option>
+            <option value="2018">2018</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <input type="text" placeholder="Dia" class="form-control" id="dia">
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" id="tipo">
+            <option value="">Tipo</option>
+            <option value="1">Alimentação</option>
+            <option value="2">Educação</option>
+            <option value="3">Lazer</option>
+            <option value="4">Saúde</option>
+            <option value="5">Transporte</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <input type="text" placeholder="Descrição" class="form-control" id="descricao">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Valor" id="valor">
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" onclick="cadastrarDespesa()">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="modal_titulo-div">
+            <h5 id="modal_titulo"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modal_descricao">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" id="modal_btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
